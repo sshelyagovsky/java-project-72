@@ -21,6 +21,9 @@ install:
 lint:
 	./gradlew checkstyleMain
 
+start:
+	./gradlew run
+
 test:
 	./gradlew test
 
