@@ -31,7 +31,7 @@ image-push:
 	make -C app image-push
 
 report:
-	./gradlew -C app report
+	make -C app report
 
 
 .PHONY: build
