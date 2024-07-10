@@ -4,7 +4,7 @@
 [![Maintainability](https://api.codeclimate.com/v1/badges/9471d2cfdb1b97a1613b/maintainability)](https://codeclimate.com/github/sshelyagovsky/java-project-72/maintainability)
 [![Test Coverage](https://api.codeclimate.com/v1/badges/9471d2cfdb1b97a1613b/test_coverage)](https://codeclimate.com/github/sshelyagovsky/java-project-72/test_coverage)
 
-Demo: https://java-javalin-example.hexlet.app
+Demo: https://java-project-72-1-wh6u.onrender.com/
 
 ## Requirements
 
