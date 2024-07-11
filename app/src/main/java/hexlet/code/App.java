@@ -34,6 +34,11 @@ public class App {
         }
     }
 
+    public static void main(String[] args) throws IOException, SQLException {
+        var app = getApp();
+        app.start(getPort());
+    }
+
     public static Javalin getApp() throws IOException, SQLException {
 
         var hikariConfig = new HikariConfig();
@@ -55,13 +60,6 @@ public class App {
         });
 
         app.get("/", ctx -> ctx.result("Hello World"));
-        app.start(7070);
-
         return app;
-    }
-
-    public static void main(String[] args) throws IOException, SQLException {
-        var app = getApp();
-        app.start(getPort());
     }
 }
