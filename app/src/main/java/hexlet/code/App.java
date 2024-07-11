@@ -18,8 +18,7 @@ public class App {
 
     private static String getJdbcUrl() {
         return System.getenv()
-                .getOrDefault("JDBC_DATABASE_URL"
-                        , "jdbc:h2:mem:hexlet;DB_CLOSE_DELAY=-1;");
+                .getOrDefault("JDBC_DATABASE_URL", "jdbc:h2:mem:hexlet;DB_CLOSE_DELAY=-1;");
     }
 
     private static int getPort() {
@@ -29,8 +28,9 @@ public class App {
 
     public static String readResourceFile(String fileName) throws IOException {
         var url = App.class.getClassLoader().getResourceAsStream(fileName);
-        try(BufferedReader reader = new BufferedReader(new InputStreamReader(url, StandardCharsets.UTF_8))) {
-           return reader.lines().collect(Collectors.joining("\n"));
+
+        try (BufferedReader reader = new BufferedReader(new InputStreamReader(url, StandardCharsets.UTF_8))) {
+            return reader.lines().collect(Collectors.joining("\n"));
         }
     }
 
