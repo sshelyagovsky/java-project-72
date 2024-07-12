@@ -47,7 +47,7 @@ public class App {
         var dataSource = new HikariDataSource(hikariConfig);
         var dbName = dataSource.getConnection().getMetaData().getDatabaseProductName();
 
-        var sql ="";
+        var sql = "";
 
         if (dbName.equals("H2")) {
             sql = readResourceFile("schema.sql");
