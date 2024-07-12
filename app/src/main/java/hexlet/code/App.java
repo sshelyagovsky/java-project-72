@@ -49,17 +49,21 @@ public class App {
 
         var sql = "";
 
+        System.out.println("jdbc" + getJdbcUrl());
+
         if (dbName.equals("H2")) {
             sql = readResourceFile("schema.sql");
         } else {
             sql = readResourceFile("schema_pg.sql");
         }
+
         log.info(sql);
 
         try (var connection = dataSource.getConnection();
              var statement = connection.createStatement()) {
             statement.execute(sql);
         }
+
         BaseRepository.dataSource = dataSource;
 
         var app = Javalin.create(config -> {
