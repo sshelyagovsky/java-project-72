@@ -45,17 +45,8 @@ public class App {
         hikariConfig.setJdbcUrl(getJdbcUrl());
 
         var dataSource = new HikariDataSource(hikariConfig);
-        var dbName = dataSource.getConnection().getMetaData().getDatabaseProductName();
 
-        var sql = "";
-
-        System.out.println("jdbc" + getJdbcUrl());
-
-        if (dbName.equals("H2")) {
-            sql = readResourceFile("schema.sql");
-        } else {
-            sql = readResourceFile("schema_pg.sql");
-        }
+        var sql = readResourceFile("schema.sql");
 
         log.info(sql);
 
