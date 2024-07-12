@@ -49,12 +49,10 @@ public class App {
         var sql = readResourceFile("schema.sql");
 
         log.info(sql);
-
         try (var connection = dataSource.getConnection();
              var statement = connection.createStatement()) {
             statement.execute(sql);
         }
-
         BaseRepository.dataSource = dataSource;
 
         var app = Javalin.create(config -> {
