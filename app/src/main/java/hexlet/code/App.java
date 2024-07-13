@@ -26,7 +26,9 @@ public class App {
     }
 
     private static String getDatabaseUrl() {
-        return System.getenv().getOrDefault("JDBC_DATABASE_URL", "jdbc:postgresql://dpg-cq9butdds78s739c5o80-a:5432/project4_kus7?password=u7ao5512M6C5NsuJir14upQ6ItQOX9UI&user=project4_kus7_user");
+        return System.getenv().getOrDefault("JDBC_DATABASE_URL"
+                , "jdbc:postgresql://dpg-cq9butdds78s739c5o80-a.frankfurt-postgres.render.com:5432" +
+                        "/project4_kus7?password=u7ao5512M6C5NsuJir14upQ6ItQOX9UI&user=project4_kus7_user");
     }
 
     private static String readResourceFile(String fileName) throws IOException {
