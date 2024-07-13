@@ -21,7 +21,9 @@ public class App {
     public static Javalin getApp() throws IOException, SQLException {
         String databaseUrl = System.getenv()
                 .getOrDefault("JDBC_DATABASE_URL", "jdbc:h2:mem:project;DB_CLOSE_DELAY=-1;");
-               // .getOrDefault("JDBC_DATABASE_URL", "jdbc:postgresql://dpg-cq92cpqju9rs73auu4fg-a.frankfurt-postgres.render.com/pages_qc6y?password=RpVlc5TkEs1cJTNzT78MR8qNzxDUQCnS&user=hexlet");
+               // .getOrDefault("JDBC_DATABASE_URL"
+        // , "jdbc:postgresql://dpg-cq92cpqju9rs73auu4fg-a.frankfurt-postgres.render.com
+        // /pages_qc6y?password=RpVlc5TkEs1cJTNzT78MR8qNzxDUQCnS&user=hexlet");
 //        String databaseUsername = System.getenv()
 //                .getOrDefault("USERNAME", null);
 //        String databasePassword = System.getenv()
