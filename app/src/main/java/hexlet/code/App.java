@@ -13,11 +13,6 @@ import java.sql.SQLException;
 @Slf4j
 public class App {
 
-    public static void main(String[] args) throws IOException, SQLException {
-        var app = getApp();
-        app.start(Utils.getPort());
-    }
-
     public static Javalin getApp() throws IOException, SQLException {
         var databaseUrl = System.getenv()
                 .getOrDefault("JDBC_DATABASE_URL", "jdbc:h2:mem:project");
@@ -27,9 +22,13 @@ public class App {
         var databasePassword = System.getenv()
                 .getOrDefault("JDBC_DATABASE_PASSWORD", null);
 
+        System.out.println(databaseUrl);
+        System.out.println(databaseUsername);
+        System.out.println(databasePassword);
+
         var hikariConfig = new HikariConfig();
-        hikariConfig.setUsername(databaseUsername);
-        hikariConfig.setPassword(databasePassword);
+        //hikariConfig.setUsername(databaseUsername);
+        //hikariConfig.setPassword(databasePassword);
         hikariConfig.setJdbcUrl(databaseUrl);
 
         var dataSource = new HikariDataSource(hikariConfig);
@@ -47,5 +46,10 @@ public class App {
 
         app.get("/", ctx -> ctx.result("Hello World"));
         return app;
+    }
+
+    public static void main(String[] args) throws IOException, SQLException {
+        var app = getApp();
+        app.start(Utils.getPort());
     }
 }
