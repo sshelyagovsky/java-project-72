@@ -43,9 +43,7 @@ public class App {
         }
         BaseRepository.dataSource = dataSource;
 
-        var app = Javalin.create(config -> {
-            config.bundledPlugins.enableDevLogging();
-        });
+        var app = Javalin.create(config -> config.bundledPlugins.enableDevLogging());
 
         app.get("/", ctx -> ctx.result("Hello World"));
         return app;
