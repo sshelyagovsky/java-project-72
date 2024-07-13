@@ -28,27 +28,23 @@ java {
 }
 
 dependencies {
-    //db
     implementation("com.h2database:h2:2.2.224")
-    implementation("org.postgresql:postgresql:42.7.3")
+    implementation("org.postgresql:postgresql:42.7.1")
     implementation("com.zaxxer:HikariCP:5.1.0")
-
-
-    //jte
+    implementation("com.fasterxml.jackson.core:jackson-databind:2.16.1")
+    implementation("org.apache.commons:commons-text:1.11.0")
     implementation("gg.jte:jte:3.1.9")
+    implementation("org.slf4j:slf4j-simple:2.0.9")
     implementation("io.javalin:javalin:6.1.3")
     implementation("io.javalin:javalin-bundle:6.1.3")
     implementation("io.javalin:javalin-rendering:6.1.3")
 
-    //other
-    implementation("org.slf4j:slf4j-simple:2.0.9")
-    implementation("com.fasterxml.jackson.core:jackson-databind:2.16.1")
-    implementation("org.apache.commons:commons-text:1.11.0")
-
-    //test
-    testImplementation("org.assertj:assertj-core:3.25.3")
+    testImplementation("org.assertj:assertj-core:3.25.2")
     testImplementation(platform("org.junit:junit-bom:5.10.1"))
     testImplementation("org.junit.jupiter:junit-jupiter")
+    testImplementation ("com.squareup.okhttp3:mockwebserver:4.12.0")
+    implementation ("org.jsoup:jsoup:1.17.2")
+    implementation ("com.konghq:unirest-java:3.13.0")
 }
 
 tasks.test {
