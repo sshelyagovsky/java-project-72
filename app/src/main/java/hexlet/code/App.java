@@ -19,9 +19,18 @@ public class App {
     }
 
     public static Javalin getApp() throws IOException, SQLException {
+        String databaseUrl = System.getenv()
+                .getOrDefault("JDBC_DATABASE_URL", "jdbc:h2:mem:project;DB_CLOSE_DELAY=-1;");
+        String databaseUsername = System.getenv()
+                .getOrDefault("USERNAME", null);
+        String databasePassword = System.getenv()
+                .getOrDefault("PASSWORD", null);
 
         var hikariConfig = new HikariConfig();
-        hikariConfig.setJdbcUrl(Utils.getJdbcUrl());
+        hikariConfig.setJdbcUrl(databaseUrl);
+        hikariConfig.setUsername(databaseUsername);
+        hikariConfig.setPassword(databasePassword);
+
         var dataSource = new HikariDataSource(hikariConfig);
         var sql = Utils.readResourceFile("schema.sql");
 

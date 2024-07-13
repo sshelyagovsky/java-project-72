@@ -10,10 +10,6 @@ import java.util.stream.Collectors;
 
 public class Utils {
 
-    public static String getJdbcUrl() {
-        return System.getenv()
-                .getOrDefault("JDBC_DATABASE_URL", "jdbc:h2:mem:project");
-    }
 
     public static int getPort() {
         String port = System.getenv()
