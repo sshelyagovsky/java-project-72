@@ -6,8 +6,6 @@ import lombok.ToString;
 
 import java.sql.Timestamp;
 
-
-
 @Getter
 @Setter
 @ToString
@@ -19,4 +17,8 @@ public class Url {
     private String name;
 
     private Timestamp createdAt;
+
+    public Url(String name) {
+        this.name = name;
+    }
 }
