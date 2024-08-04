@@ -4,10 +4,9 @@ import hexlet.code.util.NamedRoutes;
 import java.time.format.DateTimeFormatter;
 public final class JteshowurlGenerated {
 	public static final String JTE_NAME = "url/showurl.jte";
-	public static final int[] JTE_LINE_INFO = {0,0,1,2,3,3,3,5,5,5,7,10,10,12,12,12,17,17,17,21,21,21,25,25,25,30,30,30,30,30,30,30,30,30,43,43,46,46,46,49,49,49,52,52,52,55,55,55,58,58,58,61,61,61,64,64,68,68,68,68,68,3,3,3,3};
+	public static final int[] JTE_LINE_INFO = {0,0,1,2,3,3,3,4,4,6,8,8,10,10,10,15,15,15,19,19,19,23,23,23,28,28,28,28,28,28,28,28,28,41,41,44,44,44,47,47,47,50,50,50,53,53,53,56,56,56,59,59,59,62,62,66,66,66,66,66,3,3,3,3};
 	public static void render(gg.jte.html.HtmlTemplateOutput jteOutput, gg.jte.html.HtmlInterceptor jteHtmlInterceptor, UrlPage page) {
-		jteOutput.writeContent("\r\n");
-		var Dateformat = DateTimeFormatter.ofPattern("dd/MM/yyyy HH:mm");
+		var dateFormat = DateTimeFormatter.ofPattern("dd/MM/yyyy HH:mm");
 		jteOutput.writeContent("\r\n\r\n");
 		gg.jte.generated.ondemand.layout.JtepageGenerated.render(jteOutput, jteHtmlInterceptor, new gg.jte.html.HtmlContent() {
 			public void writeTo(gg.jte.html.HtmlTemplateOutput jteOutput) {
@@ -22,7 +21,7 @@ public final class JteshowurlGenerated {
 				jteOutput.writeUserContent(page.getUrl().getName());
 				jteOutput.writeContent("</td>\r\n            </tr>\r\n            <tr>\r\n                <td>Дата создания</td>\r\n                <td>");
 				jteOutput.setContext("td", null);
-				jteOutput.writeUserContent(page.getUrl().getCreatedAt().toLocalDateTime().format(Dateformat));
+				jteOutput.writeUserContent(page.getUrl().getCreatedAt().toLocalDateTime().format(dateFormat));
 				jteOutput.writeContent("</td>\r\n            </tr>\r\n            </tbody>\r\n        </table>\r\n        <h2 class=\"mt-5\">Проверки</h2>\r\n        <form method=\"post\"");
 				var __jte_html_attribute_0 = NamedRoutes.urlPathCheck(page.getUrl().getId());
 				if (gg.jte.runtime.TemplateUtils.isAttributeRendered(__jte_html_attribute_0)) {
@@ -51,7 +50,7 @@ public final class JteshowurlGenerated {
 					jteOutput.writeUserContent(checkUrl.getDescription());
 					jteOutput.writeContent("\r\n                    </td>\r\n                    <td>\r\n                        ");
 					jteOutput.setContext("td", null);
-					jteOutput.writeUserContent(checkUrl.getCreatedAt().toLocalDateTime().format(Dateformat));
+					jteOutput.writeUserContent(checkUrl.getCreatedAt().toLocalDateTime().format(dateFormat));
 					jteOutput.writeContent("\r\n                    </td>\r\n                </tr>\r\n            ");
 				}
 				jteOutput.writeContent("\r\n            </tbody>\r\n        </table>\r\n    </div>\r\n");
