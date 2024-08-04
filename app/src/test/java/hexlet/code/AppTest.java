@@ -56,7 +56,7 @@ public class AppTest {
 
     @Test
     public void testUrlsPage() {
-        JavalinTest.test(app, (server, client) ->{
+        JavalinTest.test(app, (server, client) -> {
             var response = client.get(NamedRoutes.urlsPath());
             assertThat(response.code()).isEqualTo(200);
         });
