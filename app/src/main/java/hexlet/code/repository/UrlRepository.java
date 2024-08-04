@@ -72,7 +72,7 @@ public class UrlRepository extends BaseRepository {
         return Optional.empty();
     }
 
-    public static Url findByName(String name) throws SQLException {
+    public static Optional<Url> findByName(String name) throws SQLException {
         String sql = "SELECT * FROM urls WHERE name = ?";
 
         try (var conn = dataSource.getConnection();
@@ -87,10 +87,10 @@ public class UrlRepository extends BaseRepository {
                 var url = new Url(name);
                 url.setId(id);
                 url.setCreatedAt(timeStamp);
-                return url;
+                return Optional.of(url);
             }
         }
-        return null;
+        return Optional.empty();
     }
 
 }

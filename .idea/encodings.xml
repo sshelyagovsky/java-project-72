@@ -7,9 +7,11 @@
     <file url="file://$PROJECT_DIR$/app/src/main/java/hexlet/code/App.java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/app/src/main/java/hexlet/code/controller/RootController.java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/app/src/main/java/hexlet/code/controller/UrlController.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/app/src/main/java/hexlet/code/repository/UrlCheckRepository.java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/app/src/main/resources/templates/index.jte" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/app/src/main/resources/templates/layout/page.jte" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/app/src/main/resources/templates/url/show.jte" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/app/src/test/java/hexlet/code/AppTest.java" charset="UTF-8" />
     <file url="PROJECT" charset="windows-1251" />
   </component>
 </project>

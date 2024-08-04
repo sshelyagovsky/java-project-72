@@ -29,7 +29,7 @@ java {
 
 dependencies {
     implementation("com.h2database:h2:2.2.224")
-    implementation("org.postgresql:postgresql:42.7.1")
+    implementation("org.postgresql:postgresql:42.7.2")
     implementation("com.zaxxer:HikariCP:5.1.0")
     implementation("com.fasterxml.jackson.core:jackson-databind:2.16.1")
     implementation("org.apache.commons:commons-text:1.11.0")
@@ -42,9 +42,10 @@ dependencies {
     testImplementation("org.assertj:assertj-core:3.25.2")
     testImplementation(platform("org.junit:junit-bom:5.10.1"))
     testImplementation("org.junit.jupiter:junit-jupiter")
+
     testImplementation ("com.squareup.okhttp3:mockwebserver:4.12.0")
-    implementation ("org.jsoup:jsoup:1.17.2")
-    implementation ("com.konghq:unirest-java:3.13.0")
+    implementation("org.jsoup:jsoup:1.17.2")
+    implementation("com.konghq:unirest-java:3.14.5")
 }
 
 tasks.test {
