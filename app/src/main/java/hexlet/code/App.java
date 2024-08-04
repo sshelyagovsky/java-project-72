@@ -14,12 +14,15 @@ import java.io.IOException;
 import java.sql.SQLException;
 
 import static hexlet.code.util.Utils.createTemplateEngine;
-import static hexlet.code.util.Utils.getDatabaseUrl;
 import static hexlet.code.util.Utils.getPort;
 import static hexlet.code.util.Utils.readResourceFile;
 
 @Slf4j
 public class App {
+
+    public static String getDatabaseUrl() {
+        return System.getenv().getOrDefault("JDBC_DATABASE_URL", "jdbc:h2:mem:project");
+    }
 
     public static Javalin getApp() throws IOException, SQLException {
         var hikariConfig = new HikariConfig();
