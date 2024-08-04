@@ -13,14 +13,13 @@ import java.util.stream.Collectors;
 
 public class Utils {
 
-
     public static int getPort() {
         String port = System.getenv().getOrDefault("PORT", "7070");
         return Integer.parseInt(port);
     }
 
     public static String getDatabaseUrl() {
-        return System.getenv().getOrDefault("JDBC_DATABASE_URL", "jdbc:h2:mem:hexlet");
+        return System.getenv().getOrDefault("JDBC_DATABASE_URL", "jdbc:h2:mem:project");
     }
 
     public static String readResourceFile(String fileName) throws IOException {
