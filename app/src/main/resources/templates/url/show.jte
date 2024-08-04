@@ -2,7 +2,6 @@
 @import hexlet.code.util.NamedRoutes
 @import java.time.format.DateTimeFormatter
 @param UrlsPage page
-
 !{var dateFormat = DateTimeFormatter.ofPattern("dd/MM/yyyy HH:mm");}
 
 @template.layout.page(
@@ -42,5 +41,4 @@ content = @`
             </tbody>
         </table>
     </div>
-`,
-)
+`)

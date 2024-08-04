@@ -4,9 +4,8 @@ import hexlet.code.util.NamedRoutes;
 import java.time.format.DateTimeFormatter;
 public final class JteshowGenerated {
 	public static final String JTE_NAME = "url/show.jte";
-	public static final int[] JTE_LINE_INFO = {0,0,1,2,3,3,3,5,5,5,7,10,10,24,24,26,26,29,29,29,32,32,32,32,32,32,32,32,32,32,32,32,35,35,35,38,38,38,41,41,45,45,45,45,45,3,3,3,3};
+	public static final int[] JTE_LINE_INFO = {0,0,1,2,3,3,3,4,4,6,8,8,22,22,24,24,27,27,27,30,30,30,30,30,30,30,30,30,30,30,30,33,33,33,36,36,36,39,39,43,43,43,43,43,3,3,3,3};
 	public static void render(gg.jte.html.HtmlTemplateOutput jteOutput, gg.jte.html.HtmlInterceptor jteHtmlInterceptor, UrlsPage page) {
-		jteOutput.writeContent("\n");
 		var dateFormat = DateTimeFormatter.ofPattern("dd/MM/yyyy HH:mm");
 		jteOutput.writeContent("\n\n");
 		gg.jte.generated.ondemand.layout.JtepageGenerated.render(jteOutput, jteHtmlInterceptor, new gg.jte.html.HtmlContent() {

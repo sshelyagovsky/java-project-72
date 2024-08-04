@@ -83,9 +83,7 @@ public class UrlController {
                 .orElseThrow(() -> new NotFoundResponse("Url c " + id + "не найден"));
         try {
             HttpResponse<String> jsonResponse = Unirest.get(url.getName()).asString();
-
             int responseStatus = jsonResponse.getStatus();
-
             var responseBody = Jsoup.parse(jsonResponse.getBody());
             var responseTitle = responseBody.title();
             var responseH1Element = responseBody.selectFirst("h1");
@@ -93,7 +91,6 @@ public class UrlController {
             var responseDescriptionElement = responseBody.selectFirst("meta[name=description]");
             var responseDescription = responseDescriptionElement == null ? ""
                     : responseDescriptionElement.attr("content");
-
             UrlCheck urlCheck = new UrlCheck(responseStatus, responseTitle, responseH1, responseDescription);
             urlCheck.setUrlId(id);
             urlCheck.setCreatedAt(new Timestamp(System.currentTimeMillis()));

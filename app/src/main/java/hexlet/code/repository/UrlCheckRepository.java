@@ -37,7 +37,6 @@ public class UrlCheckRepository extends BaseRepository {
 
     public static List<UrlCheck> findByUrlId(Long urlId) throws SQLException {
         String sql = "SELECT * FROM url_checks WHERE url_id = ? ORDER BY id DESC";
-
         try (var conn = dataSource.getConnection();
              var stmt = conn.prepareStatement(sql)) {
 
@@ -66,7 +65,6 @@ public class UrlCheckRepository extends BaseRepository {
         String sql = "WITH tt AS (SELECT id, url_id, status_code, title, h1, description, created_at,\n"
                 + "RANK () OVER (PARTITION BY url_id ORDER BY created_at desc) as rn FROM url_checks)"
                 + " SELECT id, url_id, status_code, title, h1, description, created_at FROM tt WHERE rn = 1";
-
         try (var conn = dataSource.getConnection();
              var stmt = conn.prepareStatement(sql)) {
             var resultSet = stmt.executeQuery();
