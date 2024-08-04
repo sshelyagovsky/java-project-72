@@ -111,14 +111,11 @@ public class AppTest {
 
             Url url = new Url(mockServerUrl);
             UrlRepository.save(url);
-            System.out.println(mockServerUrl);
             client.post(NamedRoutes.urlPathCheck(url.getId()));
 
             var checkUrl = UrlCheckRepository.findByUrlId(url.getId());
             var title = checkUrl.getFirst().getTitle();
             var h1 = checkUrl.getFirst().getH1();
-            System.out.println(title);
-            System.out.println(h1);
             assertThat(title).isEqualTo("Анализатор страниц");
             assertThat(h1).isEqualTo("Сайт: https://www.example.com");
         });
