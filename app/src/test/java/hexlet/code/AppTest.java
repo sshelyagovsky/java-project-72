@@ -43,7 +43,6 @@ public class AppTest {
     @BeforeEach
     public final void setUp() throws IOException, SQLException {
         app = App.getApp();
-        App.setDataSource();
     }
 
     @Test

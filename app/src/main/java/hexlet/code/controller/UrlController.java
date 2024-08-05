@@ -40,7 +40,7 @@ public class UrlController {
 
         var urlProtocol = checkUrl.getProtocol();
         var urlPath = checkUrl.getHost();
-        var urlPort = checkUrl.getPort() == -1 ? "" : checkUrl.getPort();
+        var urlPort = checkUrl.getPort() == -1 ? "" : ":" + checkUrl.getPort();
 
         var resultUrl = urlProtocol + "://" + urlPath + urlPort;
 

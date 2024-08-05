@@ -10,7 +10,6 @@ public class RootController {
         BasePage page = new BasePage();
         page.setFlash(ctx.consumeSessionAttribute("flash"));
         page.setFlashType(ctx.consumeSessionAttribute("flash-type"));
-        System.out.println(page.getFlash());
         ctx.render("index.jte", model("page", page));
     }
 }
