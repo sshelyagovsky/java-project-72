@@ -4,6 +4,10 @@
 [![Maintainability](https://api.codeclimate.com/v1/badges/9471d2cfdb1b97a1613b/maintainability)](https://codeclimate.com/github/sshelyagovsky/java-project-72/maintainability)
 [![Test Coverage](https://api.codeclimate.com/v1/badges/9471d2cfdb1b97a1613b/test_coverage)](https://codeclimate.com/github/sshelyagovsky/java-project-72/test_coverage)
 
+## Анализатор страниц
+
+Анализатор страниц - веб-приложение, реализованное с использованием фреймворка [Javalin](https://javalin.io). Реализует принципы современной разработки веб-сайтов с использованием архитектуры MVC: обработка маршрутизации, обработчиков запросов и шаблонов JTE, а также взаимодействие с базой данных через ORM.
+
 Demo: https://java-project-72-w218.onrender.com/
 
 ## Requirements
