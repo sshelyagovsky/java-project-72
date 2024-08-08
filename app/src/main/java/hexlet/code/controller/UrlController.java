@@ -32,7 +32,7 @@ public class UrlController {
         try {
             checkUrl = new URI(inputUrl).toURL();
         } catch (URISyntaxException | MalformedURLException | NullPointerException | IllegalArgumentException e) {
-            ctx.sessionAttribute("flash", "Некорректный URL");
+            ctx.sessionAttribute("flash", "РќРµРєРѕСЂСЂРµРєС‚РЅС‹Р№ URL");
             ctx.sessionAttribute("flash-type", "danger");
             ctx.redirect(NamedRoutes.rootPath());
             return;
@@ -47,12 +47,12 @@ public class UrlController {
         var url = UrlRepository.findByName(resultUrl).orElse(null);
 
         if (url != null) {
-            ctx.sessionAttribute("flash", "Страница уже существует");
+            ctx.sessionAttribute("flash", "РЎС‚СЂР°РЅРёС†Р° СѓР¶Рµ СЃСѓС‰РµСЃС‚РІСѓРµС‚");
             ctx.sessionAttribute("flash-type", "info");
         } else {
             Url newUrl = new Url(resultUrl.toLowerCase());
             UrlRepository.save(newUrl);
-            ctx.sessionAttribute("flash", "Страница успешно добавлена");
+            ctx.sessionAttribute("flash", "РЎС‚СЂР°РЅРёС†Р° СѓСЃРїРµС€РЅРѕ РґРѕР±Р°РІР»РµРЅР°");
             ctx.sessionAttribute("flash-type", "success");
         }
         ctx.redirect(NamedRoutes.urlsPath());
@@ -69,7 +69,7 @@ public class UrlController {
     public static void showUrl(Context ctx) throws SQLException {
         var id = ctx.pathParamAsClass("id", Long.class).get();
         var url = UrlRepository.find(id)
-                .orElseThrow(() -> new NotFoundResponse("Url не найден"));
+                .orElseThrow(() -> new NotFoundResponse("Url РЅРµ РЅР°Р№РґРµРЅ"));
         var urlChecks = UrlCheckRepository.findByUrlId(id);
         var page = new UrlPage(url, urlChecks);
         page.setFlash(ctx.consumeSessionAttribute("flash"));
@@ -80,7 +80,7 @@ public class UrlController {
     public static void urlCheck(Context ctx) throws SQLException {
         var id = ctx.pathParamAsClass("id", Long.class).get();
         Url url = UrlRepository.find(id)
-                .orElseThrow(() -> new NotFoundResponse("Url c " + id + "не найден"));
+                .orElseThrow(() -> new NotFoundResponse("Url c " + id + "РЅРµ РЅР°Р№РґРµРЅ"));
         try {
             HttpResponse<String> jsonResponse = Unirest.get(url.getName()).asString();
             int responseStatus = jsonResponse.getStatus();
@@ -94,11 +94,11 @@ public class UrlController {
             UrlCheck urlCheck = new UrlCheck(responseStatus, responseTitle, responseH1, responseDescription);
             urlCheck.setUrlId(id);
             UrlCheckRepository.saveUrlCheck(urlCheck);
-            ctx.sessionAttribute("flash", "Страница успешно проверена");
+            ctx.sessionAttribute("flash", "РЎС‚СЂР°РЅРёС†Р° СѓСЃРїРµС€РЅРѕ РїСЂРѕРІРµСЂРµРЅР°");
             ctx.sessionAttribute("flash-type", "info");
 
         } catch (UnirestException e) {
-            ctx.sessionAttribute("flash", "Некорректный адрес");
+            ctx.sessionAttribute("flash", "РќРµРєРѕСЂСЂРµРєС‚РЅС‹Р№ Р°РґСЂРµСЃ");
             ctx.sessionAttribute("flash-type", "danger");
         } catch (Exception e) {
             ctx.sessionAttribute("flash", e.getMessage());
